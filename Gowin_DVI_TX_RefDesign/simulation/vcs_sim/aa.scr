@@ -1,0 +1,1 @@
+iverilog -g2005-sv -v /Applications/GowinIDE.app/Contents/Resources/Gowin_EDA/IDE/simlib/gw1n/prim_sim.v ../../tb/tb.v ../../tb/driver/*.v ../../tb/monitor/*.v ../../tb/dvi_rx/dvi_rx.vo 

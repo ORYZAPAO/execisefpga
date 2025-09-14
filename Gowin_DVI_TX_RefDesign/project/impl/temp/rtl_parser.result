@@ -1,0 +1,46 @@
+[
+ {
+  "InstFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/video_top.v",
+  "InstLine" : 24,
+  "InstName" : "video_top",
+  "ModuleFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/video_top.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "video_top",
+  "SubInsts" : [
+   {
+    "InstFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/video_top.v",
+    "InstLine" : 80,
+    "InstName" : "testpattern_inst",
+    "ModuleFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/testpattern.v",
+    "ModuleLine" : 18,
+    "ModuleName" : "testpattern"
+   },
+   {
+    "InstFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/video_top.v",
+    "InstLine" : 134,
+    "InstName" : "u_rPLL",
+    "ModuleFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/video_top.v",
+    "InstLine" : 154,
+    "InstName" : "DVI_TX_Top_inst",
+    "ModuleFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/dvi_tx/dvi_tx.v",
+    "ModuleLine" : 1080,
+    "ModuleName" : "DVI_TX_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/dvi_tx/dvi_tx.v",
+      "InstLine" : 1240,
+      "InstName" : "rgb2dvi_inst",
+      "ModuleFile" : "/Users/zosan/github/execisefpga/Gowin_DVI_TX_RefDesign/project/src/dvi_tx/dvi_tx.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "~rgb2dvi.DVI_TX_Top"
+     }
+    ]
+   }
+  ]
+ }
+]
