@@ -1,0 +1,1 @@
+iverilog -g2012 -v ~/App/gowin/IDE/simlib/gw1n/prim_sim.v ../../project/src/dvi_tx/dvi_tx.vo
