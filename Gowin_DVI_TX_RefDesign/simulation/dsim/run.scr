@@ -1,0 +1,17 @@
+#!/usr/bin/bash 
+
+export DSIM_HOME=~/App/AltairDSim/2025.1
+export GOWIN_HOME=~/App/gowin/
+
+dsim  \
+  -v ${GOWIN_HOME}/IDE/simlib/gw1n/prim_sim.v \
+  -v ../../project/src/dvi_tx/dvi_tx.vo \
+  -v ../../project/src/gowin_rpll/gowin_rpll.v \
+  \
+  \
+  -top tb \
+  +acc+b \
+  -waves dump.mxd \
+  ../../tb/tb_dsim.v \
+  ../../tb/driver/*.v \
+  ../../tb/monitor/*.v
