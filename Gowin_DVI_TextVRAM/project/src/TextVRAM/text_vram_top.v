@@ -68,9 +68,10 @@ module text_vram_top #(
 
     // Pipeline registers for timing alignment
     reg [2:0]   char_x_d1, char_x_d2;
-    reg         pixel_en_d1, pixel_en_d2;
-    reg         hsync_d1, hsync_d2;
-    reg         vsync_d1, vsync_d2;
+    reg         pixel_en_d1, pixel_en_d2, pixel_en_d3;
+    reg         hsync_d1, hsync_d2, hsync_d3;
+    reg         vsync_d1, vsync_d2, vsync_d3;
+    reg [7:0]   vram_r_d1, vram_g_d1, vram_b_d1;
 
     // Calculate character position from pixel position
     assign char_col = pixel_x[9:3];  // pixel_x / 8
@@ -143,22 +144,36 @@ module text_vram_top #(
             char_x_d2   <= 3'd0;
             pixel_en_d1 <= 1'b0;
             pixel_en_d2 <= 1'b0;
+            pixel_en_d3 <= 1'b0;
             hsync_d1    <= ~H_SYNC_POL;
             hsync_d2    <= ~H_SYNC_POL;
+            hsync_d3    <= ~H_SYNC_POL;
             vsync_d1    <= ~V_SYNC_POL;
             vsync_d2    <= ~V_SYNC_POL;
+            vsync_d3    <= ~V_SYNC_POL;
+            vram_r_d1   <= 8'h00;
+            vram_g_d1   <= 8'h00;
+            vram_b_d1   <= 8'h00;
         end else begin
-            // Stage 1
+            // Stage 1: VRAM read latency
             char_x_d1   <= char_x;
             pixel_en_d1 <= vga_pixel_en;
             hsync_d1    <= hsync_raw;
             vsync_d1    <= vsync_raw;
 
-            // Stage 2
+            // Stage 2: Font ROM read latency
             char_x_d2   <= char_x_d1;
             pixel_en_d2 <= pixel_en_d1;
             hsync_d2    <= hsync_d1;
             vsync_d2    <= vsync_d1;
+            vram_r_d1   <= vram_r;
+            vram_g_d1   <= vram_g;
+            vram_b_d1   <= vram_b;
+
+            // Stage 3: Output register latency
+            pixel_en_d3 <= pixel_en_d2;
+            hsync_d3    <= hsync_d2;
+            vsync_d3    <= vsync_d2;
         end
     end
 
@@ -173,9 +188,9 @@ module text_vram_top #(
         end else begin
           if( font_row_data[7 - char_x_d2] ) begin
             pixel_data <= 1'b1;
-            pixel_r    <= vram_r;
-            pixel_g    <= vram_g;
-            pixel_b    <= vram_b;
+            pixel_r    <= vram_r_d1;
+            pixel_g    <= vram_g_d1;
+            pixel_b    <= vram_b_d1;
           end
           else begin
             pixel_data <= 1'b0;
@@ -187,8 +202,8 @@ module text_vram_top #(
     end
 
     // Output signals with proper pipeline delay
-    assign hsync    = hsync_d2;
-    assign vsync    = vsync_d2;
-    assign pixel_en = pixel_en_d2;
+    assign hsync    = hsync_d3;
+    assign vsync    = vsync_d3;
+    assign pixel_en = pixel_en_d3;
 
 endmodule
