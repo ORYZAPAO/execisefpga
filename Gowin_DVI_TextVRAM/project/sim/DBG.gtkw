@@ -1,0 +1,109 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Tue Feb 24 14:15:07 2026
+[*]
+[dumpfile] "/Users/zosan/github/execisefpga/Gowin_DVI_TextVRAM/project/sim/wave.fst"
+[dumpfile_mtime] "Tue Feb 24 14:15:05 2026"
+[dumpfile_size] 3243730
+[savefile] "/Users/zosan/github/execisefpga/Gowin_DVI_TextVRAM/project/sim/DBG.gtkw"
+[timestart] 0
+[size] 1333 879
+[pos] 65 -1
+*-29.327469 1174993000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] top.
+[treeopen] top.dut.
+[treeopen] top.dut.preset_tvramw.
+[treeopen] top.dut.text_vram_top_inst.
+[sst_width] 255
+[signals_width] 231
+[sst_expanded] 1
+[sst_vpaned_height] 626
+@28
+top.dut.I_rst_n
+top.dut.hdmi4_rst_n
+top.dut.preset_tvramw.clk
+top.dut.pix_clk
+top.dut.cpu_clk
+@200
+-
+@28
+top.dut.text_vram_top_inst.cpu_clk
+top.dut.text_vram_top_inst.cpu_we
+@23
+top.dut.cpu_addr[15:0]
+@22
+top.dut.text_vram_top_inst.cpu_wdata[7:0]
+top.dut.text_vram_top_inst.cpu_rdata[7:0]
+@24
+top.dut.preset_tvramw.r_state[2:0]
+@200
+-
+@28
+top.dut.text_vram_top_inst.pixel_clk
+@200
+-
+@24
+top.dut.text_vram_top_inst.pixel_x[11:0]
+top.dut.text_vram_top_inst.pixel_y[11:0]
+@200
+-
+@c00024
+top.dut.text_vram_top_inst.char_y[2:0]
+@28
+(0)top.dut.text_vram_top_inst.char_y[2:0]
+(1)top.dut.text_vram_top_inst.char_y[2:0]
+(2)top.dut.text_vram_top_inst.char_y[2:0]
+@1401200
+-group_end
+@24
+top.dut.text_vram_top_inst.char_x[2:0]
+@28
+top.dut.text_vram_top_inst.pixel_data
+@22
+top.dut.text_vram_top_inst.u_text_vram.r[7:0]
+top.dut.text_vram_top_inst.u_text_vram.g[7:0]
+top.dut.text_vram_top_inst.u_text_vram.b[7:0]
+top.dut.text_vram_top_inst.font_row_data[7:0]
+@28
+top.dut.text_vram_top_inst.u_font_rom.row[2:0]
+@200
+-
+-
+@28
+top.dut.tp0_vs_in
+top.dut.tp0_hs_in
+top.dut.tp0_de_in
+@22
+top.dut.tp0_data_r[7:0]
+top.dut.tp0_data_g[7:0]
+top.dut.tp0_data_b[7:0]
+top.dut.text_vram_top_inst.u_text_vram.dbg_vran000[7:0]
+top.dut.text_vram_top_inst.u_text_vram.dbg_vran001[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

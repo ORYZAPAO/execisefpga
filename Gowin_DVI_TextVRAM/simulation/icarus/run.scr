@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+rm dump.*
+
+
+iverilog -g2012 -o fst.scr top.sv testpattern.v
+
+vvp fst.scr -fst
+
